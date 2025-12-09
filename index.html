@@ -11,8 +11,9 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
+            min-height: 100vh;
             background-color: #f0f0f0;
+            flex-direction: column;
         }
 
         .container {
@@ -21,12 +22,12 @@
             background: white;
             border-radius: 8px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
         }
 
         button {
             padding: 10px 20px;
             background-color: #28a745;
-            /* Green color */
             color: white;
             border: none;
             border-radius: 4px;
@@ -42,6 +43,32 @@
             color: #666;
             font-size: 0.9rem;
         }
+
+        /* Contact Form Styles */
+        .contact-section {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            width: 300px;
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+            text-align: left;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 0.5rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
     </style>
 </head>
 
@@ -51,12 +78,29 @@
         <p>Este es un sitio de prueba para la actividad de Git.</p>
         <button id="actionBtn">Haz clic aquí</button>
     </div>
+
+    <div class="contact-section">
+        <h2>Contáctanos</h2>
+        <form id="contactForm">
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" required placeholder="tu@email.com">
+            </div>
+            <button type="submit">Enviar</button>
+        </form>
+    </div>
+
     <footer>
         <p>&copy; 2025 Mini Sitio. Todos los derechos reservados.</p>
     </footer>
     <script>
         document.getElementById('actionBtn').addEventListener('click', () => {
             alert('¡Hola mundo!');
+        });
+
+        document.getElementById('contactForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Formulario enviado (simulado)');
         });
     </script>
 </body>
